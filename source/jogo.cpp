@@ -48,37 +48,37 @@ int Jogo::mainMenu () {
 
     sf::Mouse mouse; //Declarando o mouse, para pegar as suas posições no futuro;
 
-    Phrase miss (gameGraphicsManager.loadFont("bin/FFF_Tusj.ttf"), "Missionarios", 70, brown, sf::Vector2f(WIDTH * 4 / 17, HEIGHT / 9)); //Colocando a frase título;
-    Phrase e (gameGraphicsManager.loadFont("bin/Vegan.ttf"), "e", 70, sf::Color::Yellow, sf::Vector2f(WIDTH * 4 / 10, (HEIGHT / 9) + 45)); //Colocando um "e", que pertence ao menu;
-    Phrase cani (gameGraphicsManager.loadFont("bin/Nightmare.ttf"), "CANIBAIS", 70, sf::Color::Blue, sf::Vector2f(WIDTH * 4 / 10, (HEIGHT / 9) + 100)); //Colocando a ultima peça faltante, o canibais;
+    Phrase miss (gameGraphicsManager.loadFont("assets/FFF_Tusj.ttf"), "Missionarios", 70, brown, sf::Vector2f(WIDTH * 4 / 17, HEIGHT / 9)); //Colocando a frase título;
+    Phrase e (gameGraphicsManager.loadFont("assets/Vegan.ttf"), "e", 70, sf::Color::Yellow, sf::Vector2f(WIDTH * 4 / 10, (HEIGHT / 9) + 45)); //Colocando um "e", que pertence ao menu;
+    Phrase cani (gameGraphicsManager.loadFont("assets/Nightmare.ttf"), "CANIBAIS", 70, sf::Color::Blue, sf::Vector2f(WIDTH * 4 / 10, (HEIGHT / 9) + 100)); //Colocando a ultima peça faltante, o canibais;
 
-    Phrase jogar (gameGraphicsManager.loadFont("bin/Pixel.ttf"), "Jogar", 65, sf::Color::Yellow, sf::Vector2f (WIDTH * 4 / 9, HEIGHT / 2)); //Colocando as três opções abaixo, que podem ser escolhidasd no menu;
-    Phrase comojogar (gameGraphicsManager.loadFont("bin/Pixel.ttf"), "Como jogar", 65, sf::Color:: Yellow, sf::Vector2f (WIDTH * 4 / 9.9, HEIGHT * 2 / 3.065));
-    Phrase sair (gameGraphicsManager.loadFont("bin/Pixel.ttf"), "Sair", 65, sf::Color::Yellow, sf::Vector2f (WIDTH * 4 / 8.7, HEIGHT * 2 / 2.5));
+    Phrase jogar (gameGraphicsManager.loadFont("assets/Pixel.ttf"), "Jogar", 65, sf::Color::Yellow, sf::Vector2f (WIDTH * 4 / 9, HEIGHT / 2)); //Colocando as três opções abaixo, que podem ser escolhidasd no menu;
+    Phrase comojogar (gameGraphicsManager.loadFont("assets/Pixel.ttf"), "Como jogar", 65, sf::Color:: Yellow, sf::Vector2f (WIDTH * 4 / 9.9, HEIGHT * 2 / 3.065));
+    Phrase sair (gameGraphicsManager.loadFont("assets/Pixel.ttf"), "Sair", 65, sf::Color::Yellow, sf::Vector2f (WIDTH * 4 / 8.7, HEIGHT * 2 / 2.5));
     gameEventsManager.addClickable(static_cast<Clickable*>(&jogar));
     gameEventsManager.addClickable(static_cast<Clickable*>(&sair));
-    Phrase victornetto (gameGraphicsManager.loadFont("bin/Amilya.ttf"), "POR: Victor Netto", 25, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.14, HEIGHT * 0.93));
-    sf::Sprite fundo(*gameGraphicsManager.loadTexture("bin/Background.png"));
+    Phrase victornetto (gameGraphicsManager.loadFont("assets/Amilya.ttf"), "POR: Victor Netto", 25, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.14, HEIGHT * 0.93));
+    sf::Sprite fundo(*gameGraphicsManager.loadTexture("assets/Background.png"));
 
-    sf::Sprite biblia(*gameGraphicsManager.loadTexture("bin/biblia.png"));
+    sf::Sprite biblia(*gameGraphicsManager.loadTexture("assets/biblia.png"));
     biblia.setPosition(sf::Vector2f(WIDTH / 6.2, HEIGHT / 9));
     biblia.setScale(sf::Vector2f(0.3, 0.3));
 
-    sf::Sprite faca(*gameGraphicsManager.loadTexture("bin/faca.png"));
+    sf::Sprite faca(*gameGraphicsManager.loadTexture("assets/faca.png"));
     faca.setPosition(sf::Vector2f(WIDTH * 3 / 5.3, (HEIGHT / 5.3)));
     faca.setScale(sf::Vector2f(0.25, 0.25));
 
-    sf::Sprite peteco(*gameGraphicsManager.loadTexture("bin/LogoPETECO.png"));
+    sf::Sprite peteco(*gameGraphicsManager.loadTexture("assets/LogoPETECO.png"));
     peteco.setPosition(sf::Vector2f(WIDTH * 0.05, HEIGHT * 0.92));
     peteco.setScale(sf::Vector2f(0.2, 0.2));
 
-    sf::Sprite petecoGrande(*gameGraphicsManager.loadTexture("bin/LogoPETECO.png"));
+    sf::Sprite petecoGrande(*gameGraphicsManager.loadTexture("assets/LogoPETECO.png"));
     petecoGrande.setPosition(sf::Vector2f(WIDTH * 0.35, HEIGHT * 0.4));
     petecoGrande.setScale(sf::Vector2f(0.8, 0.8));
 
     sf::SoundBuffer som;
 
-    if (!som.loadFromFile("bin/bigthu.ogg"))
+    if (!som.loadFromFile("assets/bigthu.ogg"))
     {
         std::cout << "\n\n @@@@@@ Error trying to access the sound." << std::endl;
 
@@ -209,18 +209,18 @@ int Jogo::startScreen(){
     white.create(WIDTH, HEIGHT, sf::Color::White);
     white.createMaskFromColor(sf::Color::White, 100); //Aqui está colocando a mascara, deixando a imagem transparente;
 
-    sf::Sprite startBackground(*gameGraphicsManager.loadTexture("bin/espaco.png"));
+    sf::Sprite startBackground(*gameGraphicsManager.loadTexture("assets/espaco.png"));
 
 
-    Phrase start (gameGraphicsManager.loadFont("bin/afanan.ttf"), "Com quantos personagens deseja jogar?", 70, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.31, WIDTH * 0.17)); //Colocando a frase de pergunta, para o jogador;
+    Phrase start (gameGraphicsManager.loadFont("assets/afanan.ttf"), "Com quantos personagens deseja jogar?", 70, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.31, WIDTH * 0.17)); //Colocando a frase de pergunta, para o jogador;
     
-    Phrase oneSelection (gameGraphicsManager.loadFont("bin/afanan.ttf"), "1 de cada tipo", 50, sf::Color::White, sf::Vector2f(WIDTH * 0.342, WIDTH * 0.25)); //Ou a opção de voltar ao menu;
+    Phrase oneSelection (gameGraphicsManager.loadFont("assets/afanan.ttf"), "1 de cada tipo", 50, sf::Color::White, sf::Vector2f(WIDTH * 0.342, WIDTH * 0.25)); //Ou a opção de voltar ao menu;
     gameEventsManager.addClickable(GET_CLICKABLE_POINTER(oneSelection));
-    Phrase twoSelection (gameGraphicsManager.loadFont("bin/afanan.ttf"), "2 de cada tipo", 50, sf::Color::White, sf::Vector2f(WIDTH * 0.342, WIDTH * 0.34)); //Colocando a opção de iniciar o jogo;
+    Phrase twoSelection (gameGraphicsManager.loadFont("assets/afanan.ttf"), "2 de cada tipo", 50, sf::Color::White, sf::Vector2f(WIDTH * 0.342, WIDTH * 0.34)); //Colocando a opção de iniciar o jogo;
     gameEventsManager.addClickable(GET_CLICKABLE_POINTER(twoSelection));
-    Phrase threeSelection (gameGraphicsManager.loadFont("bin/afanan.ttf"), "3 de cada tipo", 50, sf::Color::White, sf::Vector2f(WIDTH * 0.342, WIDTH * 0.43)); //Ou a opção de voltar ao menu;
+    Phrase threeSelection (gameGraphicsManager.loadFont("assets/afanan.ttf"), "3 de cada tipo", 50, sf::Color::White, sf::Vector2f(WIDTH * 0.342, WIDTH * 0.43)); //Ou a opção de voltar ao menu;
     gameEventsManager.addClickable(GET_CLICKABLE_POINTER(threeSelection));
-    Phrase fourSelection (gameGraphicsManager.loadFont("bin/afanan.ttf"), "4 de cada tipo", 50, sf::Color::White, sf::Vector2f(WIDTH * 0.342, WIDTH * 0.52)); //Ou a opção de voltar ao menu;
+    Phrase fourSelection (gameGraphicsManager.loadFont("assets/afanan.ttf"), "4 de cada tipo", 50, sf::Color::White, sf::Vector2f(WIDTH * 0.342, WIDTH * 0.52)); //Ou a opção de voltar ao menu;
     gameEventsManager.addClickable(GET_CLICKABLE_POINTER(fourSelection));
     
 
@@ -318,11 +318,11 @@ int Jogo::start () {
     characters = new Character*[charactersPerType*2];
 
     for(int i = 0; i < charactersPerType; i++){
-        characters[i] = new Character(gameGraphicsManager.loadTexture("bin/padre1.png"), Character::priest, RIGHTSIDE, sf::Vector2f(1200, 180), SCALEPRIEST);
+        characters[i] = new Character(gameGraphicsManager.loadTexture("assets/padre1.png"), Character::priest, RIGHTSIDE, sf::Vector2f(1200, 180), SCALEPRIEST);
         gameEventsManager.addClickable(GET_CLICKABLE_POINTER(*(characters[i])));
     }
     for(int i = charactersPerType; i < 2*charactersPerType; i++){
-        characters[i] = new Character(gameGraphicsManager.loadTexture("bin/canibal1.png"), Character::cannibal, RIGHTSIDE, sf::Vector2f(1650, 160), SCALECANNIBAL);
+        characters[i] = new Character(gameGraphicsManager.loadTexture("assets/canibal1.png"), Character::cannibal, RIGHTSIDE, sf::Vector2f(1650, 160), SCALECANNIBAL);
         gameEventsManager.addClickable(GET_CLICKABLE_POINTER(*(characters[i])));
     }
 
@@ -342,22 +342,22 @@ int Jogo::start () {
 
     sf::Mouse mouse; //Variável para pegar os movimentos do mouse;
 
-    Phrase tempo (gameGraphicsManager.loadFont("bin/afanan.ttf"), "Tempo (seg): ", 50, darkBlue, sf::Vector2f(WIDTH * 0.7, HEIGHT * 0.01));
-    Phrase time (gameGraphicsManager.loadFont("bin/afanan.ttf"), "0", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.83, HEIGHT * 0.01)); //Instânciando um objeto de tempo, onde será atualizado sempre que mudar os segundos;
+    Phrase tempo (gameGraphicsManager.loadFont("assets/afanan.ttf"), "Tempo (seg): ", 50, darkBlue, sf::Vector2f(WIDTH * 0.7, HEIGHT * 0.01));
+    Phrase time (gameGraphicsManager.loadFont("assets/afanan.ttf"), "0", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.83, HEIGHT * 0.01)); //Instânciando um objeto de tempo, onde será atualizado sempre que mudar os segundos;
 
-    Phrase movimentos(gameGraphicsManager.loadFont("bin/afanan.ttf"), "Movimentos: ", 50, darkBlue, sf::Vector2f(WIDTH * 0.45, HEIGHT * 0.01));
-    Phrase movements (gameGraphicsManager.loadFont("bin/afanan.ttf"), "0", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.58, HEIGHT * 0.01)); //Esses dois movimentos são a quantidade de movimentos que o jogador realizou;
+    Phrase movimentos(gameGraphicsManager.loadFont("assets/afanan.ttf"), "Movimentos: ", 50, darkBlue, sf::Vector2f(WIDTH * 0.45, HEIGHT * 0.01));
+    Phrase movements (gameGraphicsManager.loadFont("assets/afanan.ttf"), "0", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.58, HEIGHT * 0.01)); //Esses dois movimentos são a quantidade de movimentos que o jogador realizou;
 
-    Phrase movimentosTotais(gameGraphicsManager.loadFont("bin/afanan.ttf"), "Total de Mov.: ", 50, darkBlue, sf::Vector2f(WIDTH * 0.45, HEIGHT * 0.08));
-    Phrase totalMovements(gameGraphicsManager.loadFont("bin/afanan.ttf"), "0", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.60, HEIGHT * 0.08));
+    Phrase movimentosTotais(gameGraphicsManager.loadFont("assets/afanan.ttf"), "Total de Mov.: ", 50, darkBlue, sf::Vector2f(WIDTH * 0.45, HEIGHT * 0.08));
+    Phrase totalMovements(gameGraphicsManager.loadFont("assets/afanan.ttf"), "0", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.60, HEIGHT * 0.08));
 
-    Phrase tentativas(gameGraphicsManager.loadFont("bin/afanan.ttf"), "Tentativas: ", 50, darkBlue, sf::Vector2f(WIDTH * 0.20, HEIGHT * 0.01));
-    Phrase attempts(gameGraphicsManager.loadFont("bin/afanan.ttf"), "0", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.33, HEIGHT * 0.01)); //Aqui são as tentativas, cada vez que o jogador perde soma-se 1 na quantidade;
+    Phrase tentativas(gameGraphicsManager.loadFont("assets/afanan.ttf"), "Tentativas: ", 50, darkBlue, sf::Vector2f(WIDTH * 0.20, HEIGHT * 0.01));
+    Phrase attempts(gameGraphicsManager.loadFont("assets/afanan.ttf"), "0", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.33, HEIGHT * 0.01)); //Aqui são as tentativas, cada vez que o jogador perde soma-se 1 na quantidade;
 
-    sf::Sprite background(*gameGraphicsManager.loadTexture("bin/backgame.png")); //Iniciando o sprite que carregará o fundo;
+    sf::Sprite background(*gameGraphicsManager.loadTexture("assets/backgame.png")); //Iniciando o sprite que carregará o fundo;
 
     //Character character[NUMBEROFCHARS]; //Inicializando as variáveis de todos os personagens do jogo.
-    Boat boat (gameGraphicsManager.loadTexture("bin/barco.png"), false, 0, SCALEBOAT, sf::Vector2f(BOATXRIGHT, BOATY));
+    Boat boat (gameGraphicsManager.loadTexture("assets/barco.png"), false, 0, SCALEBOAT, sf::Vector2f(BOATXRIGHT, BOATY));
     gameEventsManager.addClickable(GET_CLICKABLE_POINTER(boat));
 
     for(int i = 0; i < charactersPerType*2; i++){
@@ -573,22 +573,22 @@ void Jogo::gameWinScreen(Character** characters, Boat boat, sf::Sprite backgroun
     whiteWindowOption.setScale(sf::Vector2f(0.35, 0.65)); //Aumentando o tamanho da janela e reposicionando ela abaixo para deixar ajeitada para o fim de jogo;
     whiteWindowOption.setPosition(sf::Vector2f((WIDTH / 2) - (whiteWindowOption.getGlobalBounds().width / 2), (HEIGHT / 2) - (whiteWindowOption.getGlobalBounds().height / 2)));
 
-    Phrase tempo(gameGraphicsManager.loadFont("bin/afanan.ttf"), "Tempo (seg): ", 50, darkBlue, sf::Vector2f(WIDTH * 0.7, HEIGHT * 0.01));
-    Phrase time(gameGraphicsManager.loadFont("bin/afanan.ttf"), "0", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.83, HEIGHT * 0.01)); //Instânciando um objeto de tempo, onde será atualizado sempre que mudar os segundos;
+    Phrase tempo(gameGraphicsManager.loadFont("assets/afanan.ttf"), "Tempo (seg): ", 50, darkBlue, sf::Vector2f(WIDTH * 0.7, HEIGHT * 0.01));
+    Phrase time(gameGraphicsManager.loadFont("assets/afanan.ttf"), "0", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.83, HEIGHT * 0.01)); //Instânciando um objeto de tempo, onde será atualizado sempre que mudar os segundos;
 
-    Phrase movimentos(gameGraphicsManager.loadFont("bin/afanan.ttf"), "Movimentos: ", 50, darkBlue, sf::Vector2f(WIDTH * 0.45, HEIGHT * 0.01));
-    Phrase movements(gameGraphicsManager.loadFont("bin/afanan.ttf"), "0", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.58, HEIGHT * 0.01)); //Esses dois movimentos são a quantidade de movimentos que o jogador realizou;
+    Phrase movimentos(gameGraphicsManager.loadFont("assets/afanan.ttf"), "Movimentos: ", 50, darkBlue, sf::Vector2f(WIDTH * 0.45, HEIGHT * 0.01));
+    Phrase movements(gameGraphicsManager.loadFont("assets/afanan.ttf"), "0", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.58, HEIGHT * 0.01)); //Esses dois movimentos são a quantidade de movimentos que o jogador realizou;
 
-    Phrase movimentosTotais(gameGraphicsManager.loadFont("bin/afanan.ttf"), "Total de Mov.: ", 50, darkBlue, sf::Vector2f(WIDTH * 0.45, HEIGHT * 0.08));
-    Phrase totalMovements(gameGraphicsManager.loadFont("bin/afanan.ttf"), "0", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.60, HEIGHT * 0.08));
+    Phrase movimentosTotais(gameGraphicsManager.loadFont("assets/afanan.ttf"), "Total de Mov.: ", 50, darkBlue, sf::Vector2f(WIDTH * 0.45, HEIGHT * 0.08));
+    Phrase totalMovements(gameGraphicsManager.loadFont("assets/afanan.ttf"), "0", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.60, HEIGHT * 0.08));
 
-    Phrase tentativas(gameGraphicsManager.loadFont("bin/afanan.ttf"), "Tentativas: ", 50, darkBlue, sf::Vector2f(WIDTH * 0.20, HEIGHT * 0.01));
-    Phrase attempts(gameGraphicsManager.loadFont("bin/afanan.ttf"), "0", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.33, HEIGHT * 0.01)); //Aqui são as tentativas, cada vez que o jogador perde soma-se 1 na quantidade;
+    Phrase tentativas(gameGraphicsManager.loadFont("assets/afanan.ttf"), "Tentativas: ", 50, darkBlue, sf::Vector2f(WIDTH * 0.20, HEIGHT * 0.01));
+    Phrase attempts(gameGraphicsManager.loadFont("assets/afanan.ttf"), "0", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.33, HEIGHT * 0.01)); //Aqui são as tentativas, cada vez que o jogador perde soma-se 1 na quantidade;
 
-    Phrase fimDeJogo(gameGraphicsManager.loadFont("bin/Pixel.ttf"), "SUCESSO! FIM DE JOGO!", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.347, HEIGHT * 0.19)); //Instanciando o fim de jogo, frase que ficará escrita no pequeno menu;
-    Phrase fimDeJogo1(gameGraphicsManager.loadFont("bin/Pixel.ttf"), "SUCESSO! FIM DE JOGO!", 50, sf::Color::Blue, sf::Vector2f(WIDTH * 0.3451, HEIGHT * 0.19)); //Instanciando uma "sombra" para dar um efeito diferente na escrita;
+    Phrase fimDeJogo(gameGraphicsManager.loadFont("assets/Pixel.ttf"), "SUCESSO! FIM DE JOGO!", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.347, HEIGHT * 0.19)); //Instanciando o fim de jogo, frase que ficará escrita no pequeno menu;
+    Phrase fimDeJogo1(gameGraphicsManager.loadFont("assets/Pixel.ttf"), "SUCESSO! FIM DE JOGO!", 50, sf::Color::Blue, sf::Vector2f(WIDTH * 0.3451, HEIGHT * 0.19)); //Instanciando uma "sombra" para dar um efeito diferente na escrita;
 
-    Phrase continuar(gameGraphicsManager.loadFont("bin/Pixel.ttf"), "Continuar", 40, sf::Color::White, sf::Vector2f(WIDTH * 0.45, HEIGHT * 0.70)); //Unica opção disponível nesse menu de finalizar o jogo;
+    Phrase continuar(gameGraphicsManager.loadFont("assets/Pixel.ttf"), "Continuar", 40, sf::Color::White, sf::Vector2f(WIDTH * 0.45, HEIGHT * 0.70)); //Unica opção disponível nesse menu de finalizar o jogo;
     gameEventsManager.addClickable(GET_CLICKABLE_POINTER(continuar));
 
 
@@ -680,11 +680,11 @@ void Jogo::gameWinScreen(Character** characters, Boat boat, sf::Sprite backgroun
 }
 
 void Jogo::logDisplayScreen(Character** characters, Boat boat, sf::Sprite background, GameData* gameData){
-    Phrase continuar(gameGraphicsManager.loadFont("bin/Pixel.ttf"), "Continuar", 40, sf::Color::White, sf::Vector2f(WIDTH * 0.45, HEIGHT * 0.70)); //Unica opção disponível nesse menu de finalizar o jogo;
+    Phrase continuar(gameGraphicsManager.loadFont("assets/Pixel.ttf"), "Continuar", 40, sf::Color::White, sf::Vector2f(WIDTH * 0.45, HEIGHT * 0.70)); //Unica opção disponível nesse menu de finalizar o jogo;
     gameEventsManager.addClickable(GET_CLICKABLE_POINTER(continuar));
 
-    Character upArrow(gameGraphicsManager.loadTexture("bin/seta_cima.png"), Character::characterType::none, 0, sf::Vector2f(WIDTH * 0.30, HEIGHT * 0.05));
-    Character downArrow(gameGraphicsManager.loadTexture("bin/seta_cima.png"), Character::characterType::none, 0, sf::Vector2f(WIDTH * 0.30, HEIGHT * 0.70), sf::Vector2f(1.0f, -1.0f));
+    Character upArrow(gameGraphicsManager.loadTexture("assets/seta_cima.png"), Character::characterType::none, 0, sf::Vector2f(WIDTH * 0.30, HEIGHT * 0.05));
+    Character downArrow(gameGraphicsManager.loadTexture("assets/seta_cima.png"), Character::characterType::none, 0, sf::Vector2f(WIDTH * 0.30, HEIGHT * 0.70), sf::Vector2f(1.0f, -1.0f));
 
     gameEventsManager.addClickable(GET_CLICKABLE_POINTER(upArrow));
     gameEventsManager.addClickable(GET_CLICKABLE_POINTER(downArrow));
@@ -710,7 +710,7 @@ void Jogo::logDisplayScreen(Character** characters, Boat boat, sf::Sprite backgr
 
         movementText += i % 2 ? " para a esquerda." : " para a direita.";
 
-        Phrase* movementPhrase = new Phrase(gameGraphicsManager.loadFont("bin/Pixel.ttf"), movementText, 40, sf::Color::White, sf::Vector2f(WIDTH * 0.37, HEIGHT * 0.05 + HEIGHT * 0.05 * i));
+        Phrase* movementPhrase = new Phrase(gameGraphicsManager.loadFont("assets/Pixel.ttf"), movementText, 40, sf::Color::White, sf::Vector2f(WIDTH * 0.37, HEIGHT * 0.05 + HEIGHT * 0.05 * i));
         movements.push_back(movementPhrase);
     }
 
@@ -796,10 +796,10 @@ void Jogo::logDisplayScreen(Character** characters, Boat boat, sf::Sprite backgr
 }
 
 void Jogo::gameOverScreen(Character** characters, Boat boat, sf::Sprite background){
-    Phrase voceperdeu (gameGraphicsManager.loadFont("bin/Pixel.ttf"), "TENTAR NOVAMENTE", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.365, HEIGHT * 0.44)); //Texto de tentar novamente que aparece caso o jogador perca;
+    Phrase voceperdeu (gameGraphicsManager.loadFont("assets/Pixel.ttf"), "TENTAR NOVAMENTE", 50, sf::Color::Yellow, sf::Vector2f(WIDTH * 0.365, HEIGHT * 0.44)); //Texto de tentar novamente que aparece caso o jogador perca;
 
     gameEventsManager.addClickable(GET_CLICKABLE_POINTER(voceperdeu));
-    //if (!voceperdeu.setFont("bin/Pixel.ttf")) //Colocando o arquivo da fonte dentro da frase e verificando se é possível abrir o arquivo;
+    //if (!voceperdeu.setFont("Pixel.ttf")) //Colocando o arquivo da fonte dentro da frase e verificando se é possível abrir o arquivo;
     //{
     //    std::cout << "\n\n @@@@@@ Error trying to access the file." << std::endl; //Frase caso não seja possível abrir o arquivo;
     //
