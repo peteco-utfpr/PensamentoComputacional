@@ -41,8 +41,8 @@ all: objFolder ./bin/$(PROJECT_NAME)
 		    @ echo ' '
 
 objFolder:
-				@ if not exist "objects" mkdir objects
+			@ mkdir -p objects
 
 clean:
-		    @ rd /S /Q objects
-			@ del .\bin\$(PROJECT_NAME).exe
+		    @ rm -r objects
+			@ rm .\bin\$(PROJECT_NAME)
