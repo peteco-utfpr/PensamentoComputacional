@@ -18,7 +18,7 @@ CC_FLAGS=-c -I ./source/
 
 
 # Linker Flags
-LINKER_FLAGS=-Wall -Lsfml-bin/ -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+LINKER_FLAGS=-Wall -Llsfml-bin -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
 
 # Compilation and linking
@@ -29,6 +29,10 @@ all: objFolder ./bin/$(PROJECT_NAME)
 				$(CC) -o $@ $^ $(LINKER_FLAGS)
 				@ echo 'Finished buiding binary: $@'
 				@ echo ' '
+				@ echo '#!/usr/bin/env bash' > mec-executavel-linux
+				@ echo ' ' >> mec-executavel-linux
+				@ echo 'cd compilado-Linux && ./Missionarios-e-Canibais && cd -' >> mec-executavel-linux
+				@ chmod +x mec-executavel-linux
 
 ./objects/%.o: ./source/%.cpp
 				@ echo 'Building target using G++ compiler: $<'
@@ -45,4 +49,4 @@ objFolder:
 
 clean:
 		    @ rm -r objects
-			@ rm .\bin\$(PROJECT_NAME)
+			@ rm ./bin/$(PROJECT_NAME)
