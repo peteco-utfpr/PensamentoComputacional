@@ -487,12 +487,6 @@ int Jogo::start () {
 
         gameGraphicsManager.draw(GET_DRAWABLE_POINTER(boat));
 
-        //if (boat.bright == false) //Colocando a opção em cima do barco, para o jogador saber que é possível mover o barco;
-        //    window.draw(boat.sprite);
-        //else
-        //    window.draw(boat.brightsprite);
-    
-
         //winOrLose = WIN;
         winOrLose = gameData.verifyWinConditions(characters); //Verificando se o jogador venceu o ganhou, chamando a função verifyWinConditions();
 
@@ -818,7 +812,7 @@ void Jogo::gameOverScreen(Character** characters, Boat boat, sf::Sprite backgrou
         }
 
         if(voceperdeu.wasClicked()){//Quando aperta, ele verifica se está em cima e retorna diretamente para a função start() novamente;
-            //gameEventsManager.removeClickable(GET_CLICKABLE_POINTER(voceperdeu));
+            gameEventsManager.removeClickable(GET_CLICKABLE_POINTER(voceperdeu));
             return;
         }
 
