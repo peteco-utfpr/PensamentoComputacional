@@ -14,5 +14,5 @@ Projeto para o <b>PETECO</b> (UTFPR), para ser futuramente utilizado pelos aluno
   <a href=https://github.com/peteco-utfpr/PensamentoComputacional/raw/master/instrucoes.pdf>Clique aqui</a> para baixar o pdf com as instruções<br>
   Ou <a href=https://github.com/peteco-utfpr/PensamentoComputacional/blob/master/instrucoes.pdf>Clique aqui</a> para lê-lo online<br>
   
-  
-
+  Vídeo do sobre Missionários e Canibais</h2><br>
+  <a href=https://drive.google.com/drive/u/0/folders/1TxVqPgst-weunZZ9H8gzJwlGsq_4kpdN>Clique aqui</a>.
